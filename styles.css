@@ -466,7 +466,7 @@ html[data-theme="dark"] .panel-dark {
 
 /* ---------- Tabel ---------- */
 
-.table-wrap { overflow-x: auto; margin: 0 -4px; padding: 0 4px; }
+.table-wrap { overflow-x: auto; margin: 0; padding: 0; }
 table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
 caption { text-align: left; font-size: 12.5px; color: var(--ink-soft); padding-bottom: 8px; }
 th, td {
