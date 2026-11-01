@@ -9,4 +9,4 @@ if errorlevel 1 (
 )
 echo Membuka dashboard di http://localhost:4321
 start "" cmd /c "timeout /t 2 >nul & start http://localhost:4321"
-node server.js
+node serve.js

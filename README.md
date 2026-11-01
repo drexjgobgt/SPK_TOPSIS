@@ -12,7 +12,7 @@ Butuh Node.js 18 atau lebih baru (dipakai untuk `fetch` bawaan).
 
 ```
 cd dashboard
-node server.js
+node serve.js
 ```
 
 Buka http://localhost:4321
@@ -42,13 +42,13 @@ Status di kanan atas berubah menjadi **Data lokal** selama input sendiri aktif, 
 - Produksi: https://spktopsis.vercel.app
 - Repositori: https://github.com/drexjgobgt/SPK_TOPSIS
 
-Proyek Vercel memakai folder ini sebagai root, tanpa build step. Di produksi tidak ada proxy lokal, jadi `app.js` langsung mengambil CSV `export` dari Google. `server.js` hanya dipakai saat dijalankan di komputer sendiri.
+Proyek Vercel memakai folder ini sebagai root, tanpa build step. Di produksi tidak ada proxy lokal, jadi `spk-topsis.js` langsung mengambil CSV `export` dari Google. `serve.js` hanya dipakai saat dijalankan di komputer sendiri.
 
 ## Koneksi data
 
 | Jalur | Dipakai saat | Catatan |
 | --- | --- | --- |
-| `GET /api/sheet` | server lokal aktif | proxy di `server.js`, cache 30 detik |
+| `GET /api/sheet` | server lokal aktif | proxy di `serve.js`, cache 30 detik |
 | `export?format=csv` | tanpa server, atau proxy gagal | CSV lengkap, semua kolom terbaca |
 | `gviz/tq?tqx=out=csv` | cadangan terakhir | sel gabungan pada blok kriteria hilang, jadi hanya cadangan |
 
@@ -79,8 +79,8 @@ Halaman **Kriteria & bobot** punya slider untuk uji sensitivitas. Hasilnya hanya
 dashboard/
   index.html    kerangka halaman dan navigasi
   styles.css    palet, tata letak, mode terang dan gelap
-  app.js        pembacaan CSV, hitung TOPSIS, editor data, render halaman
-  server.js     server statis dan proxy sheet, tanpa dependency
+  spk-topsis.js pembacaan CSV, hitung TOPSIS, editor data, render halaman
+  serve.js      server statis dan proxy sheet, tanpa dependency
   vercel.json   konfigurasi deploy statis
   start.bat     pembuka cepat di Windows
 ```

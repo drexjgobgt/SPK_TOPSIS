@@ -1,7 +1,6 @@
 node_modules/
 .vercel/
-.env
-.env.local
+.env*
+_qa/
 .DS_Store
 Thumbs.db
-_qa/
