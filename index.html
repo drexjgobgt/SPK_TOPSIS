@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPK Pemilihan Kos TOPSIS | UINSU Tuntungan</title>
+<meta name="description" content="Dashboard sistem pendukung keputusan pemilihan kos sekitar kampus UINSU Tuntungan dengan metode TOPSIS. Data terhubung ke Google Sheets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+    <div class="brand">
+      <p class="brand-name">SPK Kos</p>
+      <p class="brand-sub">UINSU Tuntungan &middot; TOPSIS</p>
+    </div>
+
+    <nav class="nav" id="nav">
+      <p class="nav-label">Analisis</p>
+      <a class="nav-link" href="#ringkasan" data-target="ringkasan">Ringkasan</a>
+      <a class="nav-link" href="#perankingan" data-target="perankingan">Perankingan</a>
+      <a class="nav-link" href="#matriks" data-target="matriks">Matriks TOPSIS</a>
+      <a class="nav-link" href="#kriteria" data-target="kriteria">Kriteria &amp; bobot</a>
+
+      <p class="nav-label">Data &amp; rujukan</p>
+      <a class="nav-link" href="#alternatif" data-target="alternatif">Data alternatif</a>
+      <a class="nav-link" href="#metode" data-target="metode">Metode &amp; validasi</a>
+      <a class="nav-link" href="#sumber" data-target="sumber">Sumber data</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <p class="sync-line"><span class="dot" id="side-dot" aria-hidden="true"></span><span id="side-status">Menyiapkan data</span></p>
+      <p class="sync-time" id="side-time">Belum ada sinkronisasi</p>
+      <a class="sheet-link" id="sheet-link" href="#" target="_blank" rel="noopener">Buka spreadsheet sumber</a>
+    </div>
+  </aside>
+
+  <div class="sidebar-scrim" id="scrim" hidden></div>
+
+  <div class="content">
+    <header class="topbar">
+      <div class="topbar-lead">
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Buka navigasi" aria-expanded="false" aria-controls="sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div>
+          <h1 class="view-title" id="view-title">Ringkasan</h1>
+          <p class="view-sub" id="view-sub">Kos di sekitar Kampus UINSU Tuntungan, Kota Medan</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <p class="status-chip" id="status-chip" data-state="loading">
+          <span class="dot" aria-hidden="true"></span><span id="status-text">Memuat</span>
+        </p>
+        <button class="btn btn-ghost btn-sm" id="theme-btn" type="button">Mode gelap</button>
+        <button class="btn btn-primary btn-sm" id="sync-btn" type="button">Sinkron data</button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <div id="view" aria-live="polite" aria-busy="false"></div>
+    </main>
+
+    <footer class="foot">
+      <p>Sumber angka: Google Sheets <span id="foot-sheet">TOPSIS pemilihan kos</span>. Nilai preferensi dihitung ulang di peramban dari matriks keputusan, bukan disalin dari sel hasil.</p>
+      <p class="foot-note">Data mentah pada sheet dilabeli sebagai data ilustrasi latihan oleh penyusunnya.</p>
+    </footer>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
