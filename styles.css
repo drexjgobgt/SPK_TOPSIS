@@ -492,8 +492,21 @@ tr.is-top td { background: var(--row-top); }
 tr.is-top:hover td { background: var(--row-top-hover); }
 tbody tr[data-selected="true"] td { background: var(--paper-2); }
 
+/* Kolom aksi menempel di kanan supaya tombol Ubah dan Hapus tidak tersembunyi saat tabel digeser */
+.table-wrap th:last-child,
+.table-wrap td:last-child {
+  position: sticky;
+  right: 0;
+  background: var(--card);
+  border-left: 1px solid var(--line);
+}
+.table-wrap tbody tr:hover td:last-child { background: var(--card-sunk); }
+.table-wrap tbody tr.is-top td:last-child { background: var(--row-top); }
+.table-wrap tbody tr.is-top:hover td:last-child { background: var(--row-top-hover); }
+.table-wrap tbody tr[data-selected="true"] td:last-child { background: var(--paper-2); }
+
 .table-hint { display: none; font-size: 12px; color: var(--ink-faint); margin: 0 0 8px; }
-@media (max-width: 1000px) { .table-hint { display: block; } }
+@media (max-width: 1320px) { .table-hint { display: block; } }
 .table-scroll { overflow-x: auto; }
 .table-scroll table { min-width: 560px; }
 
